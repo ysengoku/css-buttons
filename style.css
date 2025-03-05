@@ -1,0 +1,287 @@
+@font-face {
+	font-family: 'Kleader';
+	src: url('./fonts/Kleader.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'WestCarabao';
+	src: url('./fonts/WestCarabao-Regular.ttf') format('truetype');
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #180c01;
+  width: 100vw;
+  height: 100vh;
+}
+  
+.content {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  
+button {
+  width: 200px;
+  margin: 16px;
+  padding: 1.2em 2.8em;
+  color: #f7f1eb;
+  background: transparent;
+  background-size: 4px 3px;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  font-family: 'WestCarabao', serif;
+  font-size: 1.2rem;
+}
+
+
+/* -------------------------------------------------------- */
+/*      Button 1                                            */
+/* -------------------------------------------------------- */
+.button-1 {
+  border-radius: 16px 225px 255px 16px 16px 255px 225px 16px;
+  border: solid 3px #924f09 !important;
+  border-bottom-left-radius: 8px 216px;
+  border-bottom-right-radius: 216px 8px;
+  border-top-left-radius: 216px 8px;
+  border-top-right-radius: 16px 216px;
+  /* box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px; */
+  /* box-sizing: border-box; */
+  /* display: inline-block; */
+  /* align-self: center; */
+  /* background-image: none; */
+  /* background-position: 0 90%; */
+  /* background-repeat: repeat no-repeat; */
+  /* background-size: 4px 3px; */
+  /* outline: none; */
+  /* text-decoration: none; */
+  /* transition: all 235ms ease-in-out; */
+  /* user-select: none; */
+  /* -webkit-user-select: none; */
+  /* touch-action: manipulation; */
+}
+  
+/* -------------------------------------------------------- */
+/*      Button 2                                            */
+/* -------------------------------------------------------- */
+.button-2 {
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+  border: solid 3px #924f09 !important;
+  border-bottom-left-radius: 8px 216px;
+  border-bottom-right-radius: 216px 8px;
+  border-top-left-radius: 216px 8px;
+  border-top-right-radius: 16px 216px;
+  z-index: 1;
+}
+  
+.button-2:before,
+.button-2:after {
+  content: '';
+  position: absolute;
+  /* width: 20px;
+  height: 20px; */
+  background-color: #924f09;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+  
+.button-2:before {
+  width: 8px;
+  height: 8px;
+  left: -20px;
+  transform: translate(-50%, 8%);
+}
+  
+.button-2:after {
+  width: 48px;
+  height: 48px;
+  right: -32px;
+  transform: translate(50%, -24%);
+}
+
+.button-2:hover:before {
+  animation: criss-cross-left 0.8s both alternate;
+}
+  
+.button-2:hover:after {
+  animation: criss-cross-right 0.8s both alternate;
+}
+  
+@keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    width: 32px;
+    height: 32px;
+  }
+  100% {
+    left: 50%;
+    width: 300px;
+    height: 300px;
+  }
+}
+  
+@keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+  64% {
+    right: 50%;
+	width: 56px;
+	height: 56px;
+  }
+  100% {
+    right: 50%;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* -------------------------------------------------------- */
+/*      Button 3                                            */
+/* -------------------------------------------------------- */
+.button-3 {
+  --clr: #924f09;
+  --fg: #351901;
+  border: none;
+  position: relative;
+  filter: drop-shadow(.1em .1em .1em color-mix(in srgb, var(--clr), transparent 50%));
+ }
+
+.button-3:before {
+  --clrs1: color-mix(in lab, var(--clr), #0000 50%);
+  --clrs2: color-mix(in lab, var(--clr), #0000 20%);
+  --clrs3: color-mix(in lab, var(--clr), #0000 60%);
+  --clrs4: color-mix(in lab, var(--clr), #0000 98%);
+    position: absolute;
+    content: '';
+    inset: 0;
+    padding: .1em;
+    border: 4px double var(--clr);
+    border-radius: .1em .2em / .5em .23em;
+    z-index: -1;
+    transition: .25s ease;
+    background: var(--fg)
+    linear-gradient(178deg, 
+      var(--clrs1),
+      var(--clrs2) 20% 70%,
+      var(--clrs3) 90%,
+      var(--clrs4)) 0 0 / 100% .3rem;
+	filter: url("#squiggly-0");
+}
+
+  /* &:active {
+    translate: .05em .1em;
+    filter: drop-shadow(-.1em -.1em .1em color-mix(in srgb, var(--clr), transparent 50%));;
+  }
+  &:active:before {
+    filter: url("#squiggly-0");
+  }
+  &:focus {
+    outline: 2px dashed color-mix(in srgb, var(--clr), transparent 90%);
+    outline-offset: .5rem;
+    border-radius: .25em;
+  } */
+  /* filter: drop-shadow(.1em .1em .1em color-mix(in srgb, var(--clr), transparent 50%)); */
+}
+
+.button-3:before {  
+    filter: url("#squiggly-0"); 
+}
+
+.button-3:active:before {
+    filter: url("#squiggly-5");
+}
+
+/* -------------------------------------------------------- */
+/*      Button 4                                            */
+/* -------------------------------------------------------- */
+.button-4 {
+  appearance: none;
+  outline: none;
+  background: none;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+
+  border: solid 3px #924f09 !important;
+  border-bottom-left-radius: 8px 216px;
+  border-bottom-right-radius: 216px 8px;
+  border-top-left-radius: 216px 8px;
+  border-top-right-radius: 16px 216px;
+}
+
+.button-4 span {
+  position: relative;
+  z-index: 2;
+}
+
+.button-4:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 0;
+  height: 0;
+  background-color: #924f09;
+  border-radius: 999px;
+  transition: 0.8s ease-out;
+}
+
+.button-4:hover:after {
+  width: 200%;
+  padding-top: 200%;
+}
+
+/* -------------------------------------------------------- */
+/*      Button 5 & 6                                        */
+/* -------------------------------------------------------- */
+.button-5,
+.button-6 {
+  border: none;
+  box-sizing: border-box;
+  width: 280px;
+  border-radius: 0.5em;
+  margin: 0.5em;
+  line-height: 1.6em;
+  transition: 0.3s;
+}
+
+.button-5 {
+  background: linear-gradient(to right, #613304, #924f09);
+  text-align: right;
+  padding-right: 96px;
+  transform: perspective(440px) rotateY(45deg);
+}
+
+.button-6 {
+  background: linear-gradient(to left, #613304, #924f09);
+  text-align: left;
+  padding-left: 96px;
+  transform: perspective(440px) rotateY(-45deg);
+}
+
+.button-5:hover {
+  transform: perspective(240px) rotateY(45deg);
+  padding-right: 48px;
+}
+
+.button-6:hover {
+  transform: perspective(240px) rotateY(-45deg);
+  padding-left: 48px;
+}

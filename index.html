@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CSS buttons</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<main>
+		<div class="content">
+
+			<button class="button-1">Button 1</button>
+			<button class="button-2">Button 2</button>
+			<button class="button-3">Button 3</button>
+			<button class="button-4"><span>Button 4</span></button>
+			<button class="button-5">Button 5</button>
+			<button class="button-6">Button 6</button>
+
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="squigglysvg">
+				<defs>
+					<filter id="squiggly-0">
+						<feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
+						<feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+					</filter>
+					<filter id="squiggly-5">
+						<feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="9" />
+						<feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+					</filter>
+				</defs>
+			</svg>
+
+		</div>
+	</main>
+
+</body>
+
+</html>
