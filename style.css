@@ -28,12 +28,12 @@ main {
 }
   
 button {
-  width: 200px;
+  width: 272px;
   margin: 16px;
-  padding: 1.2em 2.8em;
+  padding: 0.8em 2.8em;
   color: #f7f1eb;
   background: transparent;
-  background-size: 4px 3px;
+  /* background-size: 4px 3px; */
   font-family: Neucha, sans-serif;
   font-size: 1rem;
   line-height: 23px;
@@ -52,20 +52,6 @@ button {
   border-bottom-right-radius: 216px 8px;
   border-top-left-radius: 216px 8px;
   border-top-right-radius: 16px 216px;
-  /* box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px; */
-  /* box-sizing: border-box; */
-  /* display: inline-block; */
-  /* align-self: center; */
-  /* background-image: none; */
-  /* background-position: 0 90%; */
-  /* background-repeat: repeat no-repeat; */
-  /* background-size: 4px 3px; */
-  /* outline: none; */
-  /* text-decoration: none; */
-  /* transition: all 235ms ease-in-out; */
-  /* user-select: none; */
-  /* -webkit-user-select: none; */
-  /* touch-action: manipulation; */
 }
   
 /* -------------------------------------------------------- */
@@ -129,8 +115,8 @@ button {
   }
   100% {
     left: 50%;
-    width: 300px;
-    height: 300px;
+    width: 480px;
+    height: 480px;
   }
 }
   
@@ -145,8 +131,8 @@ button {
   }
   100% {
     right: 50%;
-    width: 300px;
-    height: 300px;
+    width: 480px;
+    height: 480px;
   }
 }
 
@@ -182,20 +168,6 @@ button {
       var(--clrs4)) 0 0 / 100% .3rem;
 	filter: url("#squiggly-0");
 }
-
-  /* &:active {
-    translate: .05em .1em;
-    filter: drop-shadow(-.1em -.1em .1em color-mix(in srgb, var(--clr), transparent 50%));;
-  }
-  &:active:before {
-    filter: url("#squiggly-0");
-  }
-  &:focus {
-    outline: 2px dashed color-mix(in srgb, var(--clr), transparent 90%);
-    outline-offset: .5rem;
-    border-radius: .25em;
-  } */
-  /* filter: drop-shadow(.1em .1em .1em color-mix(in srgb, var(--clr), transparent 50%)); */
 
 .button-3:before {  
     filter: url("#squiggly-0"); 
@@ -249,15 +221,29 @@ button {
 /* -------------------------------------------------------- */
 /*      Button 5 & 6                                        */
 /* -------------------------------------------------------- */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
 .button-5,
 .button-6 {
   border: none;
   box-sizing: border-box;
   width: 280px;
   border-radius: 0.5em;
-  margin: 0.5em;
+  margin: 0.2em;
   padding: .4em;
   line-height: 2.4em;
+  
+  transform-style: preserve-3d;
+  
+  --clr: #924f09;
+  --fg: #351901;
+  border: none;
+  position: relative;
+  filter: drop-shadow(.1em .1em .1em color-mix(in srgb, var(--clr), transparent 50%));
 }
 
 .button-5 {
@@ -265,6 +251,9 @@ button {
   text-align: right;
   padding-right: 96px;
   transform: perspective(440px) rotateY(45deg);
+  
+  position: relative;
+  right: 16%;
 }
 
 .button-6 {
@@ -272,6 +261,8 @@ button {
   text-align: left;
   padding-left: 96px;
   transform: perspective(440px) rotateY(-45deg);
+  position: relative;
+  left: 16%;
 }
 
 .button-5:hover {
@@ -282,4 +273,64 @@ button {
 .button-6:hover {
   transform: perspective(240px) rotateY(-45deg);
   padding-left: 48px;
+}
+
+.button-5:before,
+.button-6:before {
+  --clrs1: color-mix(in lab, var(--clr), #0000 50%);
+  --clrs2: color-mix(in lab, var(--clr), #0000 20%);
+  --clrs3: color-mix(in lab, var(--clr), #0000 60%);
+  --clrs4: color-mix(in lab, var(--clr), #0000 88%);
+    position: absolute;
+    content: '';
+    inset: 0;
+    padding: .1em;
+    border: 4px double var(--clr);
+    border-radius: .1em .2em / .5em .23em;
+    z-index: -1;
+    transition: .25s ease;
+    background: var(--fg)
+    linear-gradient(178deg, 
+      var(--clrs1),
+      var(--clrs2) 48% 80%,
+      var(--clrs3) 90%,
+      var(--clrs4)) 0 0 / 100% .3rem;
+	filter: url("#squiggly-5");
+}
+
+.button-5 span {
+  position: relative;
+  top: 50%;
+  right: 32%;
+  transform: none;
+}
+
+.button-6 span {
+  position: relative;
+  top: 50%;
+  left: 32%;
+  transform: none;
+}
+
+.pole {
+  display: block;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 280px;
+	filter: url("#squiggly-5");
+  
+  --clr: #924f09;
+  --clrs1: color-mix(in lab, var(--clr), #0000 50%);
+  --clrs2: color-mix(in lab, var(--clr), #0000 20%);
+  --clrs3: color-mix(in lab, var(--clr), #0000 60%);
+  --clrs4: color-mix(in lab, var(--clr), #0000 88%);
+  background: #613304
+    linear-gradient(to right,
+      var(--clrs1) 0%, 
+      var(--clrs2) 20%,
+      var(--clrs3) 50%, 
+      var(--clrs4) 80%) 0 0 / 2px 100%; 
 }
