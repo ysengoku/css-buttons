@@ -93,7 +93,7 @@ button {
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 0;
+  z-index: -1;
 }
   
 .button-2:before {
@@ -196,7 +196,6 @@ button {
     border-radius: .25em;
   } */
   /* filter: drop-shadow(.1em .1em .1em color-mix(in srgb, var(--clr), transparent 50%)); */
-}
 
 .button-3:before {  
     filter: url("#squiggly-0"); 
@@ -213,7 +212,6 @@ button {
   appearance: none;
   outline: none;
   background: none;
-  margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
 
@@ -258,8 +256,8 @@ button {
   width: 280px;
   border-radius: 0.5em;
   margin: 0.5em;
-  line-height: 1.6em;
-  transition: 0.3s;
+  padding: .4em;
+  line-height: 2.4em;
 }
 
 .button-5 {
