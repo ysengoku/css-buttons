@@ -9,6 +9,7 @@
 
 <body>
 	<main>
+		<div class="poster"></div>
 		<div class="content">
 
 			<button class="button-1">Button 1</button>
@@ -16,11 +17,11 @@
 			<button class="button-3">Button 3</button>
 			<button class="button-4"><span>Button 4</span></button>
       
-    		<div>
+    		<div class="signpost">
         		<span class="pole"></span>
         		<div class="buttons">
+					<button class="button-6"><span>Button 6</span></button>
           			<button class="button-5"><span>Button 5</span></button>
-          			<button class="button-6"><span>Button 6</span></button>
         		</div>
       		</div>
 
@@ -33,6 +34,15 @@
 					<filter id="squiggly-5">
 						<feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="9" />
 						<feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+					</filter>
+				</defs>
+			</svg>
+
+			<svg>
+				<defs>
+					<filter id="wavy">
+						<feTurbulence baseFrequency="0.02" numOctaves="8" seed="1"></feTurbulence>
+				 	 	<feDisplacementMap in="SourceGraphic" scale="12" />
 					</filter>
 				</defs>
 			</svg>
